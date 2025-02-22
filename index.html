@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontaawesome_all.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>KİMDER</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2><a href="#">KIMDER</a></h2>
+            </div>
+            <div class="nav-links">
+                <li><a href="#anasayfa">AnaSayfa</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#vizyon">Vizyon</a></li>
+                <li><a href="#misyon">Misyon</a></li>
+                
+                
+                <div class="etkinlikler-acilir-menu">
+                    
+                    <li><a href="etkinliker">Etkinlikler</a></li>
+                    <!-- Planlanan etkinlikler ve Geçmiş etkinlikler olucak şekilde ayırılacak -->
+                </div>
+                
+                <div class="is-acilir-menu">
+                    <li><a href="#is-ilan">İş İlanları</a></li>
+                    <!-- İş veren ve iş almak isteyen şeklinde iki bölüme ayırılacak -->
+                </div>
+                
+                <li><a href="#duyurular">Duyurular</a></li>
+                
+                <li><a href="#projeler">Projeler</a></li>
+                
+                <div class="iletisim">
+                  <li><a href="">Whatsapp</a></li> 
+                    <!-- bu kısımda wp fotosu olucak -->
+                </div>
+                
+            </div>
+        </div>
+        <div id="menu-bar">
+            <i>☰ </i>
+        </div>
+    </header>
+
+    <!-- ANASAYFA -->
+
+    <section id="anasayfa">
+        
+        <div class="innerAnasayfa">
+            <div class="childAnasayfa">
+                <h1>Hala Bizi Bilmiyor Musun ? <br> <span class="span-child"> Hemen Katıl !</span></h1>
+                <p>Güzel ve sana hitap eden etkinlikler</p>
+                <button class="btn"> Katıl </button>
+            </div>
+            <div class="childAnasayfa">
+                <img src="indir.jpeg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ETKİNLİKLER -->
+
+    <section id="etkinlikler">
+        <div class="section_title">
+            <h2>Etkinlikler</h2>
+        </div>
+        
+        <div class="inner-etkinlik">
+            <div class="child-etkinlikler">
+                <div class="icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3> A etkinlik</h3>
+                <p> Etkinlikte sizleri de görmekten keyif duyarız</p> 
+                <p> Yer : Dernek Binası</p>
+                <p> Saat : 14.00</p>
+                <button class="btn-etkinlik">Detaylar</button>
+            </div>
+            <div class="child-etkinlikler">
+                <div class="icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3> B etkinlik</h3>
+                <p> Etkinlikte sizleri de görmekten keyif duyarız</p> 
+                <p> Yer : Dernek Binası</p>
+                <p> Saat : 14.00</p>
+                <button class="btn-etkinlik">Detaylar</button>
+            </div>
+            <div class="child-etkinlikler">
+                <div class="icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3> C etkinlik</h3>
+                <p> Etkinlikte sizleri de görmekten keyif duyarız</p> 
+                <p> Yer : Dernek Binası</p>
+                <p> Saat : 14.00</p>
+                <button class="btn-etkinlik">Detaylar</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var menubar = document.querySelector("#menu-bar");
+        var navbar = document.querySelector(".nav-links");
+
+        navbar.style.top = "-450px";
+
+        menubar.onclick = function(){
+            if(navbar.style.top === "-450px"){
+                navbar.style.top = "50px";
+            }
+            else{
+                navbar.style.top = "-450px";
+            }
+        };
+    </script>
+</body>
+</html>
