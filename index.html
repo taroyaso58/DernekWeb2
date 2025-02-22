@@ -25,7 +25,7 @@
                 <li><a href="#misyon">Misyon</a></li>
                 
                 <div class="dropdown">
-                    <li><a href="#etkinlikler">Etkinlikler <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#etkinlikler">Etkinlikler <i class="">&#9660;</i></a></li>
                     <div class="dropdown-content">
                         <a href="#planlanan">Planlanan Etkinlikler</a>
                         <a href="#gecmis">Geçmiş Etkinlikler</a>
@@ -34,7 +34,7 @@
                 </div>
                 
                 <div class="dropdown">
-                    <li><a href="#is-ilan">İş İlanları <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#is-ilan">İş İlanları <i class="">&#9660;</i></a></li>
                     <div class="dropdown-content">
                         <a href="#is-veren">İş Veren İlanları</a>
                         <a href="#is-arayan">İş Arayan İlanları</a>
@@ -43,7 +43,7 @@
                 </div>
                 
                 <div class="dropdown">
-                    <li><a href="#iletisim">İletişim <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#iletisim">İletişim <i class="">&#9660;</i></a></li>
                     <div class="dropdown-content">
                         <a href="#whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                         <a href="#instagram"><i class="fab fa-instagram"></i> Instagram</a>
@@ -70,7 +70,87 @@
         </div>
 
     </section>
+    <!-- FAALİYETLER -->
+    <section id="faaliyetler">
+        <div class="section_title">
+            <h2>Faaliyetlerimiz</h2>
+        </div>
 
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="foto1.jpg" alt="Faaliyet 1">
+                <div class="slide-text">
+                    <h3>Teknik Gezi</h3>
+                    <p>Endüstriyel tesislere teknik geziler düzenliyoruz</p>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="foto2.jpg" alt="Faaliyet 2">
+                <div class="slide-text">
+                    <h3>Eğitim Seminerleri</h3>
+                    <p>Alanında uzman kişilerle eğitim seminerleri</p>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="foto3.jpg" alt="Faaliyet 3">
+                <div class="slide-text">
+                    <h3>Networking Etkinlikleri</h3>
+                    <p>Sektör profesyonelleri ile networking buluşmaları</p>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Faaliyet Kartları -->
+        <div class="faaliyet-kartlari">
+            <div class="faaliyet-kart">
+                <div class="faaliyet-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Mesleki Gelişim</h3>
+                <ul>
+                    <li>Sertifika Programları</li>
+                    <li>Workshop Etkinlikleri</li>
+                    <li>Kariyer Danışmanlığı</li>
+                </ul>
+            </div>
+
+            <div class="faaliyet-kart">
+                <div class="faaliyet-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Sosyal Sorumluluk</h3>
+                <ul>
+                    <li>Burs Programları</li>
+                    <li>Mentorluk Sistemi</li>
+                    <li>Toplumsal Projeler</li>
+                </ul>
+            </div>
+
+            <div class="faaliyet-kart">
+                <div class="faaliyet-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>İş Dünyası</h3>
+                <ul>
+                    <li>Firma Ziyaretleri</li>
+                    <li>Staj İmkanları</li>
+                    <li>İş Görüşmeleri</li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <!-- ETKİNLİKLER -->
 
     <section id="etkinlikler">
@@ -136,6 +216,42 @@
     </section>
     
     <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+// Otomatik slideshow için
+setInterval(function() {
+    plusSlides(1);
+}, 5000); // Her 5 saniyede bir değişir
+
+
         var menubar = document.querySelector("#menu-bar");
         var navbar = document.querySelector(".nav-links");
 
@@ -149,6 +265,65 @@
                 navbar.style.top = "-450px";
             }
         };
+        document.addEventListener('DOMContentLoaded', function() {
+    // Dropdown menüleri seç
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const menuBar = document.querySelector('#menu-bar');
+    const navLinks = document.querySelector('.nav-links');
+    let isMenuOpen = false;
+
+    // Menü açma/kapama
+    menuBar.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        navLinks.style.display = isMenuOpen ? 'block' : 'none';
+    });
+
+    // Her dropdown için tıklama eventi ekle
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        
+        link.addEventListener('click', function(e) {
+            // Mobil görünümde link tıklamasını engelle
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                
+                // Diğer açık dropdownları kapat
+                dropdowns.forEach(other => {
+                    if (other !== dropdown) {
+                        other.classList.remove('active');
+                    }
+                });
+
+                // Tıklanan dropdown'ı aç/kapat
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+
+    // Sayfa yeniden boyutlandığında dropdown'ları sıfırla
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            navLinks.style.display = '';
+            isMenuOpen = false;
+        }
+    });
+
+    // Sayfa dışına tıklandığında menüyü kapat
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.navbar')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            if (window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
+                isMenuOpen = false;
+            }
+        }
+    });
+});
     </script>
 
 
