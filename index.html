@@ -13,6 +13,9 @@
     <header>
         <div class="navbar">
             <div class="logo">
+                <div id="menu-bar">
+                    <i>☰ </i>
+                </div>
                 <h2><a href="#">KIMDER</a></h2>
             </div>
             <div class="nav-links">
@@ -21,31 +24,33 @@
                 <li><a href="#vizyon">Vizyon</a></li>
                 <li><a href="#misyon">Misyon</a></li>
                 
-                
-                <div class="etkinlikler-acilir-menu">
-                    
-                    <li><a href="etkinliker">Etkinlikler</a></li>
-                    <!-- Planlanan etkinlikler ve Geçmiş etkinlikler olucak şekilde ayırılacak -->
+                <div class="dropdown">
+                    <li><a href="#etkinlikler">Etkinlikler <i class="fas fa-chevron-down"></i></a></li>
+                    <div class="dropdown-content">
+                        <a href="#planlanan">Planlanan Etkinlikler</a>
+                        <a href="#gecmis">Geçmiş Etkinlikler</a>
+                        <a href="#galeri">Etkinlik Galerisi</a>
+                    </div>
                 </div>
                 
-                <div class="is-acilir-menu">
-                    <li><a href="#is-ilan">İş İlanları</a></li>
-                    <!-- İş veren ve iş almak isteyen şeklinde iki bölüme ayırılacak -->
+                <div class="dropdown">
+                    <li><a href="#is-ilan">İş İlanları <i class="fas fa-chevron-down"></i></a></li>
+                    <div class="dropdown-content">
+                        <a href="#is-veren">İş Veren İlanları</a>
+                        <a href="#is-arayan">İş Arayan İlanları</a>
+                        <a href="#staj">Staj İlanları</a>
+                    </div>
                 </div>
                 
-                <li><a href="#duyurular">Duyurular</a></li>
-                
-                <li><a href="#projeler">Projeler</a></li>
-                
-                <div class="iletisim">
-                  <li><a href="">Whatsapp</a></li> 
-                    <!-- bu kısımda wp fotosu olucak -->
+                <div class="dropdown">
+                    <li><a href="#iletisim">İletişim <i class="fas fa-chevron-down"></i></a></li>
+                    <div class="dropdown-content">
+                        <a href="#whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="#instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
                 </div>
-                
             </div>
-        </div>
-        <div id="menu-bar">
-            <i>☰ </i>
         </div>
     </header>
 
@@ -106,7 +111,30 @@
             </div>
         </div>
     </section>
-
+    
+    <!-- SPONSORLAR -->
+    <section id="sponsorlar" >
+        <div class="section_title">
+            <h2>Sponsorlarımız</h2>
+        </div>
+        <div class="sponsorlar">
+            
+            <div class="sponsor-card">
+                <img src="foto1.jpg" alt="" style="height: 200px; width: 200px;">  
+                <h2> X Firması</h2>  
+            </div>
+            <div class="sponsor-card">
+                <img src="foto1.jpg" alt="" style="height: 200px; width: 200px;">  
+                <h2> Y Firması</h2>  
+            </div>
+            <div class="sponsor-card">
+                <img src="foto1.jpg" alt="" style="height: 200px; width: 200px;">  
+                <h2> Z Firması</h2>  
+            </div>
+        </div>
+        <!-- Sponsor logoları buraya -->
+    </section>
+    
     <script>
         var menubar = document.querySelector("#menu-bar");
         var navbar = document.querySelector(".nav-links");
@@ -122,5 +150,7 @@
             }
         };
     </script>
+
+
 </body>
 </html>
